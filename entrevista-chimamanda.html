@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jornal Cultural</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead-util">
+        <span class="util-date" id="utilDate"></span>
+        <div class="util-links">
+          <a href="#">Assinar</a>
+          <a href="#">Entrar</a>
+          <a href="#">Buscar</a>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Alternar modo claro/escuro"
+          >
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+            </svg>
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line
+                x1="12"
+                y1="1"
+                x2="12"
+                y2="3"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <line
+                x1="12"
+                y1="21"
+                x2="12"
+                y2="23"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <line
+                x1="4.22"
+                y1="4.22"
+                x2="5.64"
+                y2="5.64"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <line
+                x1="18.36"
+                y1="18.36"
+                x2="19.78"
+                y2="19.78"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <line
+                x1="1"
+                y1="12"
+                x2="3"
+                y2="12"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <line
+                x1="21"
+                y1="12"
+                x2="23"
+                y2="12"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <line
+                x1="4.22"
+                y1="19.78"
+                x2="5.64"
+                y2="18.36"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <line
+                x1="18.36"
+                y1="5.64"
+                x2="19.78"
+                y2="4.22"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="masthead-brand">
+        <div class="site-name">Jornal <mark>Cultural</mark></div>
+      </div>
+      <nav class="nav">
+        <a href="#">Política</a>
+        <a href="#" class="active">Cultura</a>
+        <a href="#">Mundo</a>
+        <a href="#">Literatura</a>
+        <a href="#">Entrevistas</a>
+        <a href="#">Opinião</a>
+        <a href="#">Podcast</a>
+      </nav>
+    </header>
+    <article>
+      <div class="eyebrow">
+        <span class="tag-video">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V9.5l3 2V4.5l-3 2V5a1 1 0 0 0-1-1H2z"
+            />
+          </svg>
+          Vídeo
+        </span>
+        <span class="sep"></span>
+        <span class="eyebrow-section">Entrevista Exclusiva</span>
+      </div>
+      <h1>
+        "Ela fala sobre assuntos complexos de um jeito que
+        <em>todo mundo</em> consegue entender"
+      </h1>
+      <p class="deck">
+        O pesquisador Rafael Oliveira, um das maiores especialistas na obra de
+        Chimamanda Ngozi Adichie, fala sobre legado, feminismo decolonial e por
+        que os livros da escritora nigeriana ainda incomodam tanto.
+      </p>
+      <div class="meta-bar">
+        <span class="byline">Por <strong>Redação Jornal Cultural</strong></span>
+        <span class="sep"></span>
+        <span class="byline">22 jun. 2026</span>
+        <span class="sep"></span>
+        <span class="byline">São Paulo, Brasil</span>
+      </div>
+      <div class="video-section">
+        <div class="video-label">Assista à entrevista completa</div>
+        <div class="video-frame">
+          <video controls>
+            <source src="entrevista_chimamanda.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <p class="video-caption">
+          Rafael Oliveira em entrevista ao Jornal Cultural. Junho de 2026.
+        </p>
+      </div>
+    </article>
+    <script>
+      const hoje = new Date();
+      const fmt = new Intl.DateTimeFormat("pt-BR", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+      const str = fmt.format(hoje);
+      const capitalizado = str.charAt(0).toUpperCase() + str.slice(1);
+      document.getElementById("utilDate").textContent = capitalizado;
+
+      const toggle = document.getElementById("themeToggle");
+      const root = document.documentElement;
+
+      toggle.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme");
+        root.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+      });
+    </script>
+  </body>
+</html>
